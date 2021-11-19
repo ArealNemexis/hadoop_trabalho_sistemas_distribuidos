@@ -1,6 +1,6 @@
-#Processamento de dados
+# Processamento de dados
 
-##Sequência de Inicialização
+## Sequência de Inicialização
 **1. Entrar na pasta dockers.**
 >docker-compose -f docker-compose-minimal.yml build --no-cache
 
@@ -24,7 +24,8 @@
 
 **8. Executar apresentação**
 >./apresentacao.sh
-###Tecnologias utilizadas
+
+### Tecnologias utilizadas
 - [python3](https://docs.python.org/3.8/)
 
 - [numpy](https://numpy.org/)
@@ -39,7 +40,7 @@
 
 - [docker compose](https://docs.docker.com/compose/)
 
-###Referências utilizadas
+### Referências utilizadas
 
 - [Subida de Imagem dockerhub](https://jtemporal.com/subindo-imagens-docker-pro-dockerhub/)
 
