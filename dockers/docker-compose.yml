@@ -1,0 +1,77 @@
+version: '3'
+services:
+  master:
+    build: ./hadoop-master
+    ports:
+      - "9870:9870"
+      - "8088:8088"
+      - "19888:19888"
+      - "8188:8188"
+    container_name: "master"
+    hostname: master
+    networks: 
+      hadoop-network:
+        ipv4_address: 10.5.0.2
+
+  worker1:
+    build: ./hadoop-worker
+    container_name: "worker1"
+    hostname: "worker1"
+    ports:
+      - "9901:9864"
+      - "8041:8042"
+    networks: 
+      hadoop-network:
+        ipv4_address: 10.5.0.3
+
+  worker2:
+    build: ./hadoop-worker
+    container_name: "worker2"
+    hostname: "worker2"
+    ports:
+      - "9902:9864"
+      - "8042:8042"
+    networks: 
+      hadoop-network:
+        ipv4_address: 10.5.0.4
+
+  worker3:
+    build: ./hadoop-worker
+    container_name: "worker3"
+    hostname: "worker3"
+    ports:
+      - "9903:9864"
+      - "8043:8042"
+    networks: 
+      hadoop-network:
+        ipv4_address: 10.5.0.5
+
+  worker4:
+    build: ./hadoop-worker
+    container_name: "worker4"
+    hostname: "worker4"
+    ports:
+      - "9904:9864"
+      - "8044:8042"
+    networks: 
+      hadoop-network:
+        ipv4_address: 10.5.0.6
+
+  worker5:
+    build: ./hadoop-worker
+    container_name: "worker5"
+    hostname: "worker5"
+    ports:
+      - "9905:9864"
+      - "8045:8042"
+    networks: 
+      hadoop-network:
+        ipv4_address: 10.5.0.7
+
+networks:
+  hadoop-network:
+    driver: bridge
+    ipam:
+     driver: default
+     config:
+       - subnet: 10.5.0.0/16
